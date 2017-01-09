@@ -1,27 +1,27 @@
 <!doctype html>
 <html><head>
-	<style type='text/css'>
-		html { font-family:Helvetica; color:#222; background:#aaa}
-		h1 { color:steelblue; font-size:24px; margin-top:24px; }
-		button { margin:0 10px 10px; font-size:14px; }
-		.logLine { border-bottom:1px solid #ccc; padding:4px 2px; font-family:courier; font-size:12px; }
-	</style>
+    <style type='text/css'>
+        html { font-family:Helvetica; color:#222; background:#aaa}
+        h1 { color:steelblue; font-size:24px; margin-top:24px; }
+        button { margin:0 10px 10px; font-size:14px; }
+        .logLine { border-bottom:1px solid #ccc; padding:4px 2px; font-family:courier; font-size:12px; }
+        </style>
 </head><body>
-	<h1>WebViewJavascriptBridge Demo1</h1>
-	<script>
-	window.onerror = function(err) {
-		log(err)
-	}
+    <h1>WebViewJavascriptBridge Demo1</h1>
+    <script>
+        window.onerror = function(err) {
+            log(err)
+        }
     function connectWebViewJavascriptBridge(callback) {
-		if (window.WebViewJavascriptBridge) {
-			callback(WebViewJavascriptBridge)
-		} else {
-			document.addEventListener('WebViewJavascriptBridgeReady', function() {
-				callback(WebViewJavascriptBridge)
-			}, false)
-		}
-	}
-	
+        if (window.WebViewJavascriptBridge) {
+            callback(WebViewJavascriptBridge)
+        } else {
+            document.addEventListener('WebViewJavascriptBridgeReady', function() {
+                                      callback(WebViewJavascriptBridge)
+                                      }, false)
+        }
+    }
+    
     var uniqueId = 1
     function log(data) {
         var text = document.getElementById('text')
@@ -31,140 +31,90 @@
         if (text.children.length) { text.insertBefore(el, text.children[0]) }
         else { text.appendChild(el) }
     }
-	
-	connectWebViewJavascriptBridge(function(bridge) {
-        //初始化bridge
-		bridge.init(function(message, responseCallback) {})
+    
+    connectWebViewJavascriptBridge(function(bridge)
+                                   {
+                                   //初始化bridge
+                                   bridge.init(function(message, responseCallback) {})
                                    
-        //注册响应方法
-		bridge.send('getBPID',function(responseCallback) 
-		{
-		})
-		bridge.send('setShareURL$www.baidu.com',function(responseCallback) 
-		{
-		})
-	    //oc找到bpid后调用的代码
-        bridge.registerHandler('pushBPID', function(data,responseCallback) 
-		    {
-		        alert(data)
-		        if(data ==null || data == '')
-                {
-                    alert('loadLoginPage')
-                    bridge.send('loadLoginPage$', 'please loadLoginPage', function(response) {})
-                }else
-                {
-                    alert('getBPType')
-                    bridge.send('getBPType', function(responseCallback) 
-                    {
-                    })
-                }
-		    })
-		//oc找到bptype后调用的代码
-        bridge.registerHandler('pushBPType', function(data,responseCallback) 
-		    {
-		        alert(data)
-		    })
-		var callbackButton = document.getElementById('buttons').appendChild(document.createElement('button'))
-<!--        bridge.callHandler('testObjcCallback', 'testObjcCallback', function(response) {})-->
-<!--        bridge.callHandler('getBPID', 'getBPID', function(response) {})-->
-		callbackButton.innerHTML = '调用IOS的方法'
-		callbackButton.onclick = function(e) {
-			e.preventDefault()
-            //给IOS发送消息
-            //iOSLandingURL = "Kitty$" + LandingURL;
-            bridge.send('testObjcCallback$add To Basket?', function(response) {})
-		}
-		var callbackButton2 = document.getElementById('buttons').appendChild(document.createElement('button'))
-		callbackButton2.innerHTML = '调用IOS的方法'
-		callbackButton2.onclick = function(f) {
-			f.preventDefault()
-            //给IOS发送消息
-            //iOSLandingURL = "Kitty$" + LandingURL;
-            bridge.send('parseLink$6$23333', function(response) {})
-		}
-	})
-	
-	function toLogin() {
-	   
-	   var ua = navigator.userAgent;
-	   var checker = {
-	   iphone: ua.match(/(iPhone|iPod|iPad)/),
-	   blackberry: ua.match(/BlackBerry/),
-	   android: ua.match(/Android/)
-		};
-		
-    if (checker.android){
-		jsKitty.loadLoginPage();
-	 }
-    else if (checker.iphone){
-		 /**connectWebViewJavascriptBridge(function(jsInterface) {
-            jsInterface.init(function(message, responseCallback) {
-                 if (responseCallback) {
-                     responseCallback("Right back atcha");
-                 }
-            });
-                       
-            jsInterface.send("loadLoginPage", function(response) {});
-        });**/
-		loadLoginPage();
-	 }
-	 else{
-		alert("≤ª÷ß≥÷µ±«∞‰Ø¿¿∆˜");
-	 }
-}
-
-function fetchBPID() {
-	   
-	   var ua = navigator.userAgent;
-	   var checker = {
-	   iphone: ua.match(/(iPhone|iPod|iPad)/),
-	   blackberry: ua.match(/BlackBerry/),
-	   android: ua.match(/Android/)
-		};
-		
-    if (checker.android){
-		jsKitty.getBPID();
-	 }
-    else if (checker.iphone){
-	    connectWebViewJavascriptBridge(function(jsInterface) {
-            jsInterface.init(function(message, responseCallback) {
-                 if (responseCallback) {
-                     responseCallback("Right back atcha");
-                 }
-            });    
-        jsInterface.send("getBPID", function(response) {});
-        });
-		
-	 }
-	 else{
-		alert("≤ª÷ß≥÷µ±«∞‰Ø¿¿∆˜");
-	 }
-}
-
-function fetchBPType(){
-	   var ua = navigator.userAgent;
-	   var checker = {
-	   iphone: ua.match(/(iPhone|iPod|iPad)/),
-	   blackberry: ua.match(/BlackBerry/),
-	   android: ua.match(/Android/)
-		};
-		
-    if (checker.android){
-		jsKitty.getBPType();
-	 } else if (checker.iphone){
-	    getBPType();
-	 } else{
-		alert("≤ª÷ß≥÷µ±«∞‰Ø¿¿∆˜");
-	 }
-}
-
-function pushBPID(bpid){
-    alert('new');
-	alert(bpid);
-	if(bpid ==null || bpid == ''){
-		toLogin();
-	}else{
-		fetchBPType();
+                                   //注册响应方法
+                                   bridge.send('getBPID',function(responseCallback)
+                                               {
+                                               })
+                                   bridge.send('setShareURL$www.baidu.com',function(responseCallback)
+                                               {
+                                               })
+                                   //oc找到bpid后调用的代码
+                                   bridge.registerHandler('pushBPID', function(data,responseCallback)
+                                                          {
+                                                          alert(data)
+                                                          if(data ==null || data == '')
+                                                          {
+                                                          alert('loadLoginPage')
+                                                          bridge.send('loadLoginPage$', 'please loadLoginPage', function(response) {})
+                                                          }else
+                                                          {
+                                                          alert('getBPType')
+                                                          bridge.send('getBPType', function(responseCallback)
+                                                                      {
+                                                                      })
+                                                          }
+                                                          })
+                                   //oc找到bptype后调用的代码
+                                   bridge.registerHandler('pushBPType', function(data,responseCallback)
+                                                          {
+                                                          alert(data)
+                                                          })
+                                   var callbackButton = document.getElementById('buttons').appendChild(document.createElement('button'))
+                                   <!--        bridge.callHandler('testObjcCallback', 'testObjcCallback', function(response) {})-->
+                                   <!--        bridge.callHandler('getBPID', 'getBPID', function(response) {})-->
+                                   callbackButton.innerHTML = '调用IOS的方法'
+                                   callbackButton.onclick = function(e) {
+                                   e.preventDefault()
+                                   //给IOS发送消息
+                                   //iOSLandingURL = "Kitty$" + LandingURL;
+                                   bridge.send('KittyLoad$http://www.sonystyle.com.cn/mobile_app/bravia_40/x8500d.4.json', function(response) {})
+                                   }
+                                   var callbackButton2 = document.getElementById('buttons').appendChild(document.createElement('button'))
+                                   callbackButton2.innerHTML = '调用IOS的方法'
+                                   callbackButton2.onclick = function(f) {
+                                   f.preventDefault()
+                                   //给IOS发送消息
+                                   //iOSLandingURL = "Kitty$" + LandingURL;
+                                   bridge.send('parseLink$6$23333', function(response) {})
+                                   }
+                                   })
+                                   function toLogin() {
+                                       
+                                       var ua = navigator.userAgent;
+                                       var checker = {
+                                           iphone: ua.match(/(iPhone|iPod|iPad)/),
+                                           blackberry: ua.match(/BlackBerry/),
+                                           android: ua.match(/Android/)
+                                       };
+                                       
+                                       if (checker.android){
+                                           jsKitty.loadLoginPage();
+                                       }
+                                       else if (checker.iphone){
+                                           /**connectWebViewJavascriptBridge(function(jsInterface) {
+                                            jsInterface.init(function(message, responseCallback) {
+                                            if (responseCallback) {
+                                            responseCallback("Right back atcha");
+                                            }
+                                            });
+                                            
+                                            jsInterface.send("loadLoginPage", function(response) {});
+                                            });**/
+                                           loadLoginPage();
+                                       }
+                                       else{
+                                           alert("≤ª÷ß≥÷µ±«∞‰Ø¿¿∆˜");
+                                       }
+                                   }
+    
+    function fetchBPID() {
+        
         var ua = navigator.userAgent;
         var checker = {
             iphone: ua.match(/(iPhone|iPod|iPad)/),
@@ -190,15 +140,65 @@ function pushBPID(bpid){
             alert("≤ª÷ß≥÷µ±«∞‰Ø¿¿∆˜");
         }
     }
-}
-
-function pushBPType(bpType){
-	alert(bpType);
-}
-
-// fetchBPID();
-	
-	
-	</script>
-	<div id='buttons'></div> <div id='text'></div>
+    
+    function fetchBPType(){
+        var ua = navigator.userAgent;
+        var checker = {
+            iphone: ua.match(/(iPhone|iPod|iPad)/),
+            blackberry: ua.match(/BlackBerry/),
+            android: ua.match(/Android/)
+        };
+        
+        if (checker.android){
+            jsKitty.getBPType();
+        } else if (checker.iphone){
+            getBPType();
+        } else{
+            alert("≤ª÷ß≥÷µ±«∞‰Ø¿¿∆˜");
+        }
+    }
+    
+    function pushBPID(bpid){
+        alert(bpid);
+        if(bpid ==null || bpid == ''){
+            toLogin();
+        }else{
+            fetchBPType();
+            var ua = navigator.userAgent;
+            var checker = {
+                iphone: ua.match(/(iPhone|iPod|iPad)/),
+                blackberry: ua.match(/BlackBerry/),
+                android: ua.match(/Android/)
+            };
+            
+            if (checker.android){
+                jsKitty.getBPID();
+            }
+            else if (checker.iphone){
+                connectWebViewJavascriptBridge(function(jsInterface2) {
+                                               jsInterface2.init(function(message, responseCallback) {
+                                                                 if (responseCallback) {
+                                                                 responseCallback("Right back atcha");
+                                                                 }
+                                                                 });    
+                                               jsInterface2.send("getBPID", function(response) {});
+                                               });
+                                               
+            }
+            else{
+                alert("≤ª÷ß≥÷µ±«∞‰Ø¿¿∆˜");
+            }
+        }
+    }
+    
+    function pushBPType(bpType){
+        alert(bpType);
+    }
+    
+    fetchBPID();
+    
+    
+    
+        </script>
+    <div id='buttons'></div> <div id='text'></div>
 </body></html>
