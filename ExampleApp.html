@@ -50,10 +50,10 @@
         else if (checker.iphone){
             
             var iOSLandingURL = "Kitty$" + LandingURL;
-<!--            connectWebViewJavascriptBridge(function(bridge) {-->
-<!--                                           bridge.init(function(message, responseCallback) {})-->
+            connectWebViewJavascriptBridge(function(bridge) {
+
                                            bridge.send(iOSLandingURL, function(responseCallback){})
-<!--                                           })-->
+                                           })
         }
         else{
             alert("不支持当前浏览器");
