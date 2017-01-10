@@ -50,9 +50,8 @@
         else if (checker.iphone){
             
             var iOSLandingURL = "Kitty$" + LandingURL;
-            connectWebViewJavascriptBridge(function(bridge) {
-                                           bridge.init(function(message, responseCallback) {})
-                                           bridge.send(iOSLandingURL, function(responseCallback){})
+            connectWebViewJavascriptBridge(function(jsInterface) {
+                                           jsInterface.send(iOSLandingURL, function(responseCallback){})
                                            })
         }
         else{
