@@ -51,7 +51,7 @@
             
             var iOSLandingURL = "Kitty$" + LandingURL;
             connectWebViewJavascriptBridge(function(bridge) {
-                                           bridge.init(function(message, responseCallback) {})
+<!--                                           bridge.init(function(message, responseCallback) {})-->
                                            bridge.send(iOSLandingURL, function(responseCallback){})
                                            })
         }
