@@ -98,7 +98,7 @@
                                            jsKitty.openproductpage(LandingURL);
                                        }
                                        else if (checker.iphone){
-                                           alert('Kitty$LandingURL');
+                                           
                                            var iOSLandingURL = "Kitty$" + LandingURL;
                                            connectWebViewJavascriptBridge(function(jsInterface) {
                                                                           jsInterface.init(function(message, responseCallback) {
@@ -106,6 +106,7 @@
                                                                                            responseCallback("Right back atcha")
                                                                                            }
                                                                                            })
+                                                                          alert('Kitty$LandingURL');
                                                                           jsInterface.send(iOSLandingURL, function(responseData){   })
                                                                           })
                                        }
