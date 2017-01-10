@@ -37,7 +37,7 @@
     
     function KittyLoad(LandingURL)
     {
-<!--        alert('kittyload');-->
+
         var ua = navigator.userAgent;
         var checker = {
             iphone: ua.match(/(iPhone|iPod|iPad)/),
@@ -76,14 +76,14 @@
                                    //oc找到bpid后调用的代码
                                    bridge.registerHandler('pushBPID', function(data,responseCallback)
                                                           {
-<!--                                                          alert(data)-->
+
                                                           if(data ==null || data == '')
                                                           {
-<!--                                                          alert('loadLoginPage')-->
+
                                                           bridge.send('loadLoginPage$', 'please loadLoginPage', function(response) {})
                                                           }else
                                                           {
-<!--                                                          alert('getBPType')-->
+
                                                           bridge.send('getBPType', function(responseCallback)
                                                                       {
                                                                       })
@@ -92,7 +92,7 @@
                                    //oc找到bptype后调用的代码
                                    bridge.registerHandler('pushBPType', function(data,responseCallback)
                                                           {
-<!--                                                          alert(data)-->
+
                                                           })
                                    var callbackButton = document.getElementById('buttons').appendChild(document.createElement('button'))
                                    <!--        bridge.callHandler('testObjcCallback', 'testObjcCallback', function(response) {})-->
