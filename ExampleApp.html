@@ -48,8 +48,29 @@
             jsKitty.openproductpage(LandingURL);
         }
         else if (checker.iphone){
-            
             var iOSLandingURL = "Kitty$" + LandingURL;
+            connectWebViewJavascriptBridge(function(jsInterface) {
+                                           jsInterface.send(iOSLandingURL, function(responseCallback){})
+                                           })
+        }
+        else{
+            alert("不支持当前浏览器");
+        }
+    }
+    
+    function setShareTitle(shareTitle)
+    {
+        var ua = navigator.userAgent;
+        var checker = {
+            iphone: ua.match(/(iPhone|iPod|iPad)/),
+            blackberry: ua.match(/BlackBerry/),
+            android: ua.match(/Android/)
+        };
+        if (checker.android){
+            jsKitty.openproductpage(LandingURL);
+        }
+        else if (checker.iphone){
+            var iOSLandingURL = "setShareTitle$" + shareTitle;
             connectWebViewJavascriptBridge(function(jsInterface) {
                                            jsInterface.send(iOSLandingURL, function(responseCallback){})
                                            })
@@ -106,11 +127,11 @@
                                    }
                                    var callbackButton2 = document.getElementById('buttons').appendChild(document.createElement('button'))
                                    callbackButton2.innerHTML = '调用IOS的方法'
-                                   callbackButton2.onclick = function(f) {
-                                   f.preventDefault()
+                                   callbackButton2.onclick = function() {
+                                   setShareTitle('setShareTitle')
                                    //给IOS发送消息
                                    //iOSLandingURL = "Kitty$" + LandingURL;
-                                   bridge.send('parseLink$6$23333', function(response) {})
+<!--                                   bridge.send('parseLink$6$23333', function(response) {})-->
                                    }
                                    })
                                    
