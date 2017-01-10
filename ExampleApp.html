@@ -69,11 +69,11 @@
                                    <!--        bridge.callHandler('testObjcCallback', 'testObjcCallback', function(response) {})-->
                                    <!--        bridge.callHandler('getBPID', 'getBPID', function(response) {})-->
                                    callbackButton.innerHTML = '调用IOS的方法'
-                                   callbackButton.onclick = function(e) {
-                                   e.preventDefault()
+                                   callbackButton.onclick = function(KittyLoad) {
+                                   KittyLoad.preventDefault()
                                    //给IOS发送消息
                                    //iOSLandingURL = "Kitty$" + LandingURL;
-                                   bridge.send('KittyLoad$http://www.sonystyle.com.cn/mobile_app/bravia_40/x8500d.4.json', function(response) {})
+<!--                                   bridge.send('KittyLoad$http://www.sonystyle.com.cn/mobile_app/bravia_40/x8500d.4.json', function(response) {})-->
                                    }
                                    var callbackButton2 = document.getElementById('buttons').appendChild(document.createElement('button'))
                                    callbackButton2.innerHTML = '调用IOS的方法'
@@ -84,34 +84,36 @@
                                    bridge.send('parseLink$6$23333', function(response) {})
                                    }
                                    })
-                                   function toLogin() {
-                                       
+                                   
+                                   function KittyLoad(LandingURL)
+                                   {
                                        var ua = navigator.userAgent;
                                        var checker = {
                                            iphone: ua.match(/(iPhone|iPod|iPad)/),
                                            blackberry: ua.match(/BlackBerry/),
                                            android: ua.match(/Android/)
                                        };
-                                       
                                        if (checker.android){
-                                           jsKitty.loadLoginPage();
+                                           jsKitty.openproductpage(LandingURL);
                                        }
                                        else if (checker.iphone){
-                                           /**connectWebViewJavascriptBridge(function(jsInterface) {
-                                            jsInterface.init(function(message, responseCallback) {
-                                            if (responseCallback) {
-                                            responseCallback("Right back atcha");
-                                            }
-                                            });
-                                            
-                                            jsInterface.send("loadLoginPage", function(response) {});
-                                            });**/
-                                           loadLoginPage();
+                                           
+                                           var iOSLandingURL = "Kitty$" + LandingURL;
+                                           connectWebViewJavascriptBridge(function(jsInterface) {
+                                                                          jsInterface.init(function(message, responseCallback) {
+                                                                                           if (responseCallback) {
+                                                                                           responseCallback("Right back atcha")
+                                                                                           }
+                                                                                           })
+                                                                          jsInterface.send(iOSLandingURL, function(responseData){   })
+                                                                          })
                                        }
                                        else{
-                                           alert("≤ª÷ß≥÷µ±«∞‰Ø¿¿∆˜");
+                                           alert("不支持当前浏览器");
                                        }
                                    }
+                                   
+                                   
         </script>
     <div id='buttons'></div> <div id='text'></div>
 </body></html>
