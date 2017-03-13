@@ -1,14 +1,544 @@
-<!doctype html>
-<html><head>
-    <title>简单html页面</title>
-</head><body>
-    
-    <h1>WebViewJavascriptBridge Demo1</h1>
-    <script>
-        window.onerror = function(err) {
-            log(err)
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <title>索尼购机福利 | 索尼中国在线商城</title>
+                <link rel="stylesheet" href="css/mobile.css">
+                    <script src="http://www.sonystyle.com.cn/sshf/jquery.js"></script>
+                    <script src="js/self_box.js"></script>
+                    <script  src="js/device.js"></script>
+                    <script src="http://www.sonystyle.com.cn/js/postmessage.js"></script>
+                    
+                    <script>
+                        $(document).ready(function(){
+                                          var opacityHeight = $(".opacity_bg").height();
+                                          var bodyHeight= $(document).height();
+                                          
+                                          $(".bt1").click(function(){
+                                                          
+                                                          $(".opacity_bg").css({"display":"block","height":bodyHeight});
+                                                          $("#fuceng_pop").show();
+                                                          });
+                                          
+                                          $(".close_fc").click(function(){
+                                                               $(".opacity_bg").css({"display":"none"});
+                                                               $("#fuceng_pop").hide();
+                                                               });
+                                          
+                                          });
+                        </script>
+                    <script>
+                        function gotoClass(cls){
+                            var stopd = $("."+cls).offset().top;
+                            $("html,body").animate({"scrollTop":stopd+0});
+                            
+                            
+                        }
+                    </script>
+                    
+                    <script type="text/javascript">
+                        
+                        
+                        /*project 是全局对象*/
+                        
+                        function QueryString(item){
+                            /* var sValue=location.search.match(new RegExp("[\?\&]"+item+"=([^\&]*)(\&?)","i"))
+                             return sValue?sValue[1]:sValue*/
+                            var sValue=window.location.hash.match(new RegExp("[\#\&]"+item+"=([^\&]*)(\&?)","i"));
+                            if(sValue != null){
+                                var tss = sValue[1].split("#")[0];
+                                return tss?tss:sValue
+                            }
+                            
+                            
+                            
+                        }
+                    
+                    
+                    $(document).ready(function(){
+                                      if(QueryString("p")){
+                                      var temp_s = QueryString("p");
+                                      
+                                      if(temp_s==1){
+                                      gotoClass('top1')
+                                      }
+                                      if(temp_s==2){
+                                      gotoClass('top2')
+                                      }
+                                      if(temp_s==3){
+                                      gotoClass('top3')
+                                      }
+                                      if(temp_s==4){
+                                      gotoClass('top4')
+                                      }
+                                      
+                                      
+                                      
+                                      
+                                      }
+                                      
+                                      
+                                      });
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      /*flash*/
+                                      
+                        </script>
+                    <style>
+                        
+                        html,body,div,p,ul,li{ margin:0; padding:0;}
+                        figure{ display:block; margin:0;}
+                        ul,li{ list-style:none;}
+                        
+                        .mcon .link1 a{ width:50%; height:100%; display:block; position:absolute; top:0; left:0;}
+                        .mcon .link2 a{ width:50%; height:100%; display:block; position:absolute; top:0; right:0;}
+                        
+                        .inner { width: 100%;}
+                        
+                        .lt1{ color:#ff9406; font-size:15px; position:absolute; top:89%; right:19%; font-weight:bold;}
+                        .lt2{ color:#ff9406; font-size:15px; position:absolute; top:11.3%; right:21%; font-weight:bold;}
+                        @media screen and (max-width: 320px){
+                            .lt1{ color:#ff9406; font-size:12px; position:absolute; top:89%; right:19%; font-weight:bold;}
+                            .lt2{ color:#ff9406; font-size:15px; position:absolute; top:11.3%; right:21%; font-weight:bold;}
+                            
+                        }
+                    </style>
+                    <script src="//assets.adobedtm.com/1908254899689bc8102616a8c8482c9d87ee3f36/satelliteLib-9ca3d38e3e20baeda239714c8f26fa8cb7a0b3e1.js"></script>
+                    
+                    </head>
+    <body class="page-swipe" style="padding:0; margin:0;">
+        
+        <a href="#" class="gouwuPopLink add_bulists " style="display:none;"></a>
+        
+        <div class="mcon"><img src="images/img1.jpg"></div>
+        <div class="mcon">
+            <img src="images/list_bar.jpg">
+                <div class="link1"><a href="javascript:void(0);"></a></div>
+                <div class="link2"><a href="http://www.sonystyle.com.cn/mobile_app/promotion/di_161214/index.htm"></a></div>
+                </div>
+        
+        
+        <div class="mcon"><img src="images/img2.jpg"></div>
+        <div class="mcon"><img src="images/img3.jpg"></div>
+        
+        <div class="mcon mcon2">
+            <div class="pic"><img src="images/img4.jpg"></div>
+            <div class="c_price clearfix" >
+                <div class="p_price">
+                    <span class="cprice"></span>
+                </div>
+            </div>
+            <div class="color_z clearfix">
+                <div class="colors color_1">
+                    <a href="javascript:void(0)" rel="P50000208" ><span class="color1"></span></a>
+                </div>
+                
+            </div>
+            <div class="btn"><a href="javascript:void(0)" class="buybtn" ><img src="images/btn2.png" ></a></div>
+        </div>
+        <div class="mcon mcon2">
+            <div class="pic"><img src="images/img5.jpg"></div>
+            <div class="c_price clearfix" >
+                <div class="p_price">
+                    <span class="cprice"></span>
+                </div>
+            </div>
+            <div class="color_z clearfix">
+                <div class="colors color_1">
+                    <a href="javascript:void(0)" rel="P50000207" ><span class="color1"></span></a>
+                </div>
+                
+            </div>
+            <div class="btn"><a href="javascript:void(0)" class="buybtn" ><img src="images/btn2.png" ></a></div>
+        </div>
+        <div class="mcon mcon2">
+            <div class="pic"><img src="images/img6.jpg"></div>
+            <div class="c_price clearfix" >
+                <div class="p_price">
+                    <span class="cprice"></span>
+                </div>
+            </div>
+            <div class="color_z clearfix">
+                <div class="colors color_1">
+                    <a href="javascript:void(0)" rel="P50000206" ><span class="color1"></span></a>
+                </div>
+                
+            </div>
+            <div class="btn"><a href="javascript:void(0)" class="buybtn" ><img src="images/btn2.png" ></a></div>
+        </div>
+        
+        <div class="mcon"><img src="images/img7.jpg"></div>
+        
+        <div class="mcon mcon2">
+            <div class="pic"><img src="images/img8.jpg"></div>
+            <div class="c_price clearfix" style="left:8%;">
+                <div class="p_price">
+                    <span class="cprice"></span>
+                </div>
+            </div>
+            <div class="color_z clearfix">
+                <div class="colors color_1">
+                    <a href="javascript:void(0)" rel="P50000209" ><span class="color1"></span></a>
+                </div>
+                
+            </div>
+            <div class="btn"><a href="javascript:void(0)" class="buybtn" ><img src="images/btn2.png" ></a></div>
+        </div>
+        <div class="mcon mcon2">
+            <div class="pic"><img src="images/img9.jpg"></div>
+            <div class="c_price clearfix" style="left:8%;">
+                <div class="p_price">
+                    <span class="cprice"></span>
+                </div>
+            </div>
+            <div class="color_z clearfix">
+                <div class="colors color_1">
+                    <a href="javascript:void(0)" rel="P50000210" ><span class="color1"></span></a>
+                </div>
+                
+            </div>
+            <div class="btn"><a href="javascript:void(0)" class="buybtn" ><img src="images/btn2.png" ></a></div>
+        </div>
+        
+        <div class="mcon mcon2">
+            <div class="pic"><a href="javascript:KittyLoad('mobile_app/bravia_40/x8500d.4.json')"><img src="images/img10.jpg"></a></div>
+            <div class="qi" style="left:89%; top:39%;">起</div>
+            <div class="c_price clearfix" style="left:64%; top:37%;">
+                <div class="p_price">
+                    <span class="cprice"></span>
+                </div>
+            </div>
+            <div class="color_z clearfix">
+                <div class="colors color_1">
+                    <a href="javascript:void(0)" rel="P18792200" ><span class="color1"></span></a>
+                </div>
+                
+            </div>
+            <div class="btn"><a href="javascript:KittyLoad('mobile_app/bravia_40/x8500d.4.json')"  ><img src="images/btn2.png" ></a></div>
+        </div>
+        
+        <div class="mcon mcon2">
+            <div class="pic"><a href="javascript:KittyLoad('mobile_app/bravia_40/s8500d.4.json')"><img src="images/img11.jpg"></a></div>
+            <div class="qi" style="left:35%; top:38%;">起</div>
+            <div class="c_price clearfix" style="left:8%; top:36%;">
+                <div class="p_price">
+                    <span class="cprice"></span>
+                </div>
+            </div>
+            <div class="color_z clearfix">
+                <div class="colors color_1">
+                    <a href="javascript:void(0)" rel="P18851600" ><span class="color1"></span></a>
+                </div>
+                
+            </div>
+            <div class="btn" style="left:5%;"><a href="javascript:KittyLoad('mobile_app/bravia_40/s8500d.4.json')"  ><img src="images/btn2.png" ></a></div>
+        </div>
+        
+        <div class="mcon mcon2">
+            <div class="pic"><a href="javascript:KittyLoad('mobile_app/bravia_40/x8000d.4.json')"><img src="images/img12.jpg"></a></div>
+            <div class="qi" style="left:89%; top:39%;">起</div>
+            <div class="c_price clearfix" style="left:64%; top:37%;">
+                <div class="p_price">
+                    <span class="cprice"></span>
+                </div>
+            </div>
+            <div class="color_z clearfix">
+                <div class="colors color_1">
+                    <a href="javascript:void(0)" rel="P18792400" ><span class="color1"></span></a>
+                </div>
+                
+            </div>
+            <div class="btn"><a href="javascript:KittyLoad('mobile_app/bravia_40/x8000d.4.json')" ><img src="images/btn2.png" ></a></div>
+        </div>
+        
+        <div class="mcon mcon2">
+            <div class="pic"><a href="javascript:KittyLoad('mobile_app/bravia_40/x7500dx7000d.4.json')"><img src="images/img13.jpg"></a></div>
+            <div class="qi" style="left:35%; top:45%;">起</div>
+            <div class="c_price clearfix" style="left:8%;">
+                <div class="p_price">
+                    <span class="cprice"></span>
+                </div>
+            </div>
+            <div class="color_z clearfix">
+                <div class="colors color_1">
+                    <a href="javascript:void(0)" rel="P18773600" ><span class="color1"></span></a>
+                </div>
+                
+            </div>
+            <div class="btn" style="left:5%;"><a href="javascript:KittyLoad('mobile_app/bravia_40/x7500dx7000d.4.json')"  ><img src="images/btn2.png" ></a></div>
+        </div>
+        
+        
+        
+        <script type="text/javascript">
+            var mType = "";
+            function connectWebViewJavascriptBridge(callback) {
+                if (window.WebViewJavascriptBridge) {
+                    callback(WebViewJavascriptBridge)
+                } else {
+                    document.addEventListener('WebViewJavascriptBridgeReady', function() {
+                                              callback(WebViewJavascriptBridge)
+                                              }, false)
+                }
+            }
+        function KittyLoad(LandingURL) {
+            var ua = navigator.userAgent;
+            var checker = {
+                iphone: ua.match(/(iPhone|iPod|iPad)/),
+                blackberry: ua.match(/BlackBerry/),
+                android: ua.match(/Android/)
+            };
+            if (checker.android){
+                jsKitty.openproductpage(LandingURL);
+            }
+            else if (checker.iphone){
+                
+                var iOSLandingURL = "Kitty$" + LandingURL;
+                connectWebViewJavascriptBridge(function(jsInterface) {
+                                               jsInterface.init(function(message, responseCallback) {
+                                                                if (responseCallback) {
+                                                                responseCallback("Right back atcha")
+                                                                }
+                                                                })
+                                               jsInterface.send(iOSLandingURL, function(responseData){   })
+                                               })
+            }
+            else{
+                alert("不支持当前浏览器");
+            }
         }
-    alert("Rua!");
-        </script>
-    <div id='buttons'></div> <div id='text'></div>
-</body></html>
+        
+        function CampaignLoad(LandingURL) {
+            var ua = navigator.userAgent;
+            var checker = {
+                iphone: ua.match(/(iPhone|iPod|iPad)/),
+                blackberry: ua.match(/BlackBerry/),
+                android: ua.match(/Android/)
+            };
+            if (checker.android){
+                jsCampaign.loginForCampaign(LandingURL);
+            }
+            else if (checker.iphone){
+                var iOSLandingURL = "Campaign$" + LandingURL;
+                connectWebViewJavascriptBridge(function(jsInterface) {
+                                               jsInterface.init(function(message, responseCallback) {
+                                                                if (responseCallback) {
+                                                                responseCallback("Right back atcha")
+                                                                }
+                                                                })
+                                               jsInterface.send(iOSLandingURL, function(responseData){	})
+                                               })
+            }
+            else{
+                alert("不支持当前浏览器");
+            }
+        }
+        
+        function pushBPType(_bpType){
+            mType = _bpType;
+            /*	if(mType !=""){*/
+            $(".color_1").each(function(index, element) {
+                               var $th = $(element).find("a").eq(0);
+                               if(!$th.hasClass("active")){
+                               var code = $th.attr("rel");
+                               var index = $th.index();
+                               $th.addClass("active");
+                               $th.siblings().removeClass("active");
+                               $th.closest(".mcon").find(".cp_z").find("a").hide();
+                               $th.closest(".mcon").find(".cp_z").find("a").eq(index).show();
+                               if(code != ""){
+                               $th.closest(".mcon").find(".buybtn").attr("href","").attr("href","javascript:CampaignLoad('https://www.sonystyle.com.cn/b2c_sony/b2c/mobile/shoppingCart.do?key="+code+"&itemCount=1&targetPage=addToCartAndShowAssociatedProductsInPopup')");
+                               getPicestatus(code,$th,mType);
+                               }else{
+                               $th.closest(".mcon").find(".cprice").html("敬请期待");
+                               
+                               }
+                               }
+                               
+                               
+                               
+                               });
+                               /*	}*/
+                               
+        }
+        function getBPType(){
+            var bpType = "";
+            
+            var ua = navigator.userAgent;
+            var checker = {
+                iphone: ua.match(/(iPhone|iPod|iPad)/),
+                blackberry: ua.match(/BlackBerry/),
+                android: ua.match(/Android/)
+            };
+            
+            if (checker.android){
+                jsInterface.getBPType();
+            }
+            else if (checker.iphone){
+                connectWebViewJavascriptBridge(function(jsInterface) {
+                                               jsInterface.init(function(message, responseCallback) {
+                                                                if (responseCallback) {
+                                                                responseCallback("Right back atcha");
+                                                                }
+                                                                });
+                                               
+                                               jsInterface.send ("getBPType", function(response) {
+                                                                 });
+                                               });
+            }
+            else {
+                alert('unknown device');
+            }
+            
+        }
+        
+        getBPType();
+        var getPicestatus = function(code,obj,bptype){
+            var th = $(obj);
+            $.get("/webservices/jsonWeb/app/eightdPriceServlet?ids="+code+"&pVal="+bptype, function(result){
+                  if(mType != ""){
+                  var bimg = 	th.closest(".mcon").find(".btn").find("img");
+                  bimg.attr("src",bimg.attr("src").replace("btn","act"));
+                  }
+                  var products = eval('('+result+')').products;
+                  var product = products[0];
+                  
+                  if(product.membPriceFlag == "1"){
+                  
+                  if(product.mType == ""){
+                  th.closest(".mcon").find(".cprice").html("RMB "+product.srp);
+                  }else{
+                  var  memImg = " ";
+                  if(product.mType == "R"){
+                  memImg = "<span><img src='/sshf/images/member/reg_logo.png'  style='width:16px;'></span><span>注册会员价：</span>";
+                  }
+                  if(product.mType == "B"){
+                  memImg = "<span><img src='/sshf/images/member/bronze_logo.png'  style='width:16px;'></span><span>铜牌会员价：</span>";
+                  }
+                  if(product.mType == "S"){
+                  memImg = "<span><img src='/sshf/images/member/silver_logo.png'  style='width:16px;'></span><span>银牌会员价：</span>";
+                  }
+                  if(product.mType == "G"){
+                  memImg = "<span><img src='/sshf/images/member/gold_logo.png'  style='width:16px;'></span><span>金牌会员价：</span>";
+                  }
+                  if(product.mType == "D"){
+                  memImg = "<span><img src='/sshf/images/member/diamond_logo.png'  style='width:16px;'></span><span>钻石会员价：</span>";
+                  }
+                  
+                  if(th.hasClass("nohy")){
+                  //th.closest(".mcon").find(".cprice").html("RMB "+product.srp);
+                  
+                  }else{
+                  $(".loginin").hide();
+                  //th.closest(".mcon").find(".hy").html(memImg)
+                  th.closest(".mcon").find(".cprice").html("RMB "+product.price);
+                  
+                  }
+                  }
+                  
+                  }else{
+                  th.closest(".mcon").find(".cprice").html("RMB "+product.srp);
+                  
+                  }
+                  
+                  });
+        }
+        window.onload = function(){
+            
+            var whref = window.location.href;
+            
+            
+            
+            
+            $(".gouwuPopLink").attr("href","https://www.sonystyle.com.cn/b2c_sony/b2c/shoppingCart.do?key=P50773459&itemCount=1&currentStaticPage="+whref +"");
+            
+            $(".gouwuPopLink").click(function(event){
+                                     event.preventDefault();
+                                     var th = this;
+                                     var sbox = new self_box(th);
+                                     sbox.openIframe();
+                                     
+                                     })
+                                     $(".color_1 a").each(function(index){
+                                                          $(this).click(function(){
+                                                                        if(!$(this).hasClass("active")){
+                                                                        var code = $(this).attr("rel");
+                                                                        
+                                                                        var index = $(this).index();
+                                                                        $(this).addClass("active");
+                                                                        $(this).siblings().removeClass("active");
+                                                                        $(this).closest(".mcon").find(".cp_z").find("a").hide();
+                                                                        $(this).closest(".mcon").find(".cp_z").find("a").eq(index).show();
+                                                                        if(code != ""){
+                                                                        $(this).closest(".mcon").find(".buybtn").attr("href","").attr("href","javascript:CampaignLoad('https://www.sonystyle.com.cn/b2c_sony/b2c/mobile/shoppingCart.do?key="+code+"&itemCount=1&targetPage=addToCartAndShowAssociatedProductsInPopup')");
+                                                                        getPicestatus(code,this,mType);
+                                                                        }else{
+                                                                        $(this).closest(".mcon").find(".cprice").html("敬请期待");
+                                                                        
+                                                                        }
+                                                                        
+                                                                        
+                                                                        
+                                                                        }
+                                                                        
+                                                                        })
+                                                          
+                                                          })
+                                                          if(mType =="" && device.ios()){
+                                                              $(".color_1").each(function(index, element) {
+                                                                                 var $th = $(element).find("a").eq(0);
+                                                                                 if(!$th.hasClass("active")){
+                                                                                 var code = $th.attr("rel");
+                                                                                 var index = $th.index();
+                                                                                 $th.addClass("active");
+                                                                                 $th.siblings().removeClass("active");
+                                                                                 $th.closest(".mcon").find(".cp_z").find("a").hide();
+                                                                                 $th.closest(".mcon").find(".cp_z").find("a").eq(index).show();
+                                                                                 if(code != ""){
+                                                                                 $th.closest(".mcon").find(".buybtn").attr("href","").attr("href","javascript:CampaignLoad('https://www.sonystyle.com.cn/b2c_sony/b2c/mobile/shoppingCart.do?key="+code+"&itemCount=1&targetPage=addToCartAndShowAssociatedProductsInPopup')");
+                                                                                 getPicestatus(code,$th,mType);
+                                                                                 }else{
+                                                                                 $th.closest(".mcon").find(".cprice").html("敬请期待");
+                                                                                 
+                                                                                 }
+                                                                                 }
+                                                                                 
+                                                                                 
+                                                                                 
+                                                                                 });
+                                                          }
+                                                          if(device.android()){
+                                                              $(".color_1").each(function(index, element) {
+                                                                                 $(this).find("a:eq(0)").trigger("click");
+                                                                                 });
+                                                                                 
+                                                          }
+                                                          
+                                                          
+                                                          pm.bind("closing", function(data) {
+                                                                  if(data === "closed"){
+                                                                  $("#selfBoxMark").remove();
+                                                                  $("#selfBoxContent").remove();
+                                                                  }
+                                                                  });
+                                                                  
+        }
+        
+        
+            </script>
+        
+        
+        
+        
+        
+        <script type="text/javascript">_satellite.pageBottom();</script>
+        
+        <noscript><img src='http://sc.sonystyle.com.cn/b/ss/sonycncom/1/H.10--NS/0?[AQB]&cdp=3&[AQE]' height="1" width="1" border="0" alt="" /></noscript>
+    </body>
+</html>
