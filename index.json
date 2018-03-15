@@ -171,7 +171,7 @@
   "icon": "/content/dam/sonystyle/images/blocktitlelogo.png",
   "imageItems": [{
                  "type": "1",
-                 "width": "full",
+                 "width": "half",
                  "height": "3",
                  "align": "left",
                  "onlyImage": "",
@@ -207,7 +207,7 @@
                  "link": ""
                  }, {
                  "type": "3",
-                 "width": "half",
+                 "width": "full",
                  "height": "2",
                  "align": "left",
                  "onlyImage": "",
@@ -225,7 +225,7 @@
                  "link": ""
                  }, {
                  "type": "4",
-                 "width": "half",
+                 "width": "full",
                  "height": "3",
                  "align": "left",
                  "onlyImage": "",
@@ -245,7 +245,7 @@
                  "type": "3",
                  "width": "half",
                  "height": "2",
-                 "align": "left",
+                 "align": "right",
                  "onlyImage": "",
                  "image": "",
                  "techIcon1": "",
@@ -279,7 +279,7 @@
                  "link": ""
                  }, {
                  "type": "1",
-                 "width": "full",
+                 "width": "half",
                  "height": "3",
                  "align": "left",
                  "onlyImage": "",
