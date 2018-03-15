@@ -2,35 +2,29 @@
      <head>
              <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
              <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!--             <script type="text/javascript">-->
-<!--                     var ua = navigator.userAgent;-->
-<!--                     var checker = {-->
-<!--                             iphone: ua.match(/(iPhone|iPod|iPad)/),-->
-<!--                             blackberry: ua.match(/BlackBerry/),-->
-<!--                             android: ua.match(/Android/)-->
-<!--                         };-->
-<!--             alert("此设备是："+checker.iphone);-->
-<!--             if (checker.android){-->
-<!--                     alert("0")-->
-<!--                     android.jump();-->
-<!--                 }else{-->
-<!--                         alert("1")-->
-<!--                         jump();-->
-<!--                         alert("2")-->
-<!--                     }-->
-<!--             </script>-->
+             <script type="text/javascript">
+                     var ua = navigator.userAgent;
+                     var checker = {
+                             iphone: ua.match(/(iPhone|iPod|iPad)/),
+                             blackberry: ua.match(/BlackBerry/),
+                             android: ua.match(/Android/)
+                         };
+             alert("此设备是："+checker.iphone);
+             if (checker.android){
+                     alert("0")
+                     android.jump();
+                 }else{
+                         alert("1")
+                         sleep(3);
+                         jump();
+                         alert("2")
+                     }
+             </script>
          </head>
      <body>
          <div align="center">
              <a class="button green" style="height:20px;width:60px;" href=" " onclick="javascript:jump();">取消</a >
          </div>
-<!--          <a href="https://bcrystalest.github.io/ExampleTargetApp.html">网页内部超链接</a>-->
          </body>
-     <script type="text/javascript">
-         function jump(){
-             android.jump();
-         }
-     </script>
-     
 </html>
 
