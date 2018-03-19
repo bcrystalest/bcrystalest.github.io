@@ -1,11 +1,170 @@
-
 <!DOCTYPE html>
-<html lang="en">
-        <head>
-                <meta charset="UTF-8">
-                        <title>Title</title>
-                </head>
-       <body>
-                <a href="https://bcrystalest.github.io/ExampleTargetApp.html">网页内部超链接</a>
-            </body>
+<html>
+    <head>
+        <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+            <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimum-scale=1.0,maximum-scale=1.0" />
+            <title>拍出新精彩</title>
+            <script type="text/javascript" src="http://www.sonystyle.com.cn/mysony/acafe/js/jquery.min.js"></script>
+            <style>
+                html,body,div,p{ margin:0; padding:0;}
+                .m_bg a{ outline:0 none; border:0 none;}
+                .container .m_bg{ position:relative;}
+                img{ width:100%; vertical-align:top;}
+                
+                
+                
+                
+                @media screen and (max-width:1920px){
+                    .container .m_bg{ position:relative; width:640px;}
+                }
+            @media screen and (max-width:960px){
+                .container .m_bg{ position:relative; width:640px;}
+            }
+            @media screen and (max-width: 600px){
+                .container .m_bg{ position:relative; width:100%;}
+            }
+            @media screen and (max-width: 320px){
+                .container .m_bg{ position:relative; width:100%;}
+            }
+            .fuceng{ width:100%; height:100%; position:fixed; left:0; top:0; z-index:9999; background:rgba(0,0,0,0.75); display:none;}
+            .fm{ position:fixed; width:90%; left:5%; top:5%;  z-index:10000;}
+            .upt{ display:block; width:19.8%; position:fixed; right:1%; bottom:5%; z-index:99;}
+            
+                </style>
+            <script>
+                function shod(){
+                    $(".fuceng").show();
+                    $(".closed").click(function(){
+                                       $(".fuceng").hide();
+                                       })
+                                       
+                                       
+                }
+            
+            
+                </script>
+            <script>
+                var links = encodeURIComponent("https://www.sonystyle.com.cn/mobile/index.htm?link_type=110&link=16");
+                
+                var ua = window.navigator.userAgent.toLowerCase();
+                if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+                    window.location.href = "index_wechat.htm";
+                }
+            
+            
+            
+            function connectWebViewJavascriptBridge(callback) {
+                
+                if (window.WebViewJavascriptBridge) {
+                    
+                    callback(WebViewJavascriptBridge)
+                    
+                } else {
+                    
+                    document.addEventListener('WebViewJavascriptBridgeReady', function() {
+                                              
+                                              callback(WebViewJavascriptBridge)
+                                              
+                                              }, false)
+                                              
+                }
+                
+            }
+            
+            
+            
+            function parseLink(linktype,links) {
+                
+                var ua = navigator.userAgent;
+                
+                var checker = {
+                    
+                    iphone: ua.match(/(iPhone|iPod|iPad)/),
+                    
+                    blackberry: ua.match(/BlackBerry/),
+                    
+                    android: ua.match(/Android/)
+                    
+                };
+                
+                if (checker.android){
+                    jsKitty.parseLink(linktype,links);
+                    
+                }
+                
+                else if (checker.iphone){
+                    
+                    
+                    
+                    var iOSLandingURL = "parseLink$" + linktype+"$"+links+"$";
+                    connectWebViewJavascriptBridge(function(jsInterface) {
+                                                   
+                                                   jsInterface.init(function(message, responseCallback) {
+                                                                    
+                                                                    if (responseCallback) {
+                                                                    
+                                                                    responseCallback("Right back atcha")
+                                                                    
+                                                                    }
+                                                                    
+                                                                    })
+                                                   
+                                                   jsInterface.send(iOSLandingURL, function(responseData){   })
+                                                   
+                                                   })
+                                                   
+                }
+                
+                else{
+                    
+                    alert("不支持当前浏览器");
+                    
+                }
+                
+            }
+            
+            
+            
+                </script>
+            <script src="//assets.adobedtm.com/1908254899689bc8102616a8c8482c9d87ee3f36/satelliteLib-9ca3d38e3e20baeda239714c8f26fa8cb7a0b3e1.js"></script>
+    </head>
+    <body>
+        <div style="display:none"><img src="images/app/sha.jpg" ></div>
+        <a
+            href="javascript:parseLink('1',links)" class="upt"><img src="images/app/tougao.png"></a>
+        <div class="m_bg">
+            <img src="images/app/img1.jpg">
+                </div>
+        <div class="m_bg">
+            <img src="images/app/img2.jpg">
+                </div>
+        <div class="m_bg">
+            <img src="images/app/img3.jpg">
+                </div>
+        <div class="m_bg">
+            <a href="javascript:parseLink('10','285')"><img src="images/app/img4.jpg"></a>
+        </div>
+        <div class="m_bg">
+            <img src="images/app/img5.jpg">
+                </div>
+        <div class="m_bg">
+            <img src="images/app/img6.jpg">
+                </div>
+        <div class="m_bg">
+            <a href="javascript:void(0)" onClick="shod()"> <img src="images/app/img7.jpg"></a>
+        </div>
+        
+        
+        <div class="fuceng">
+            <div class="fm">
+                <a href="javascript:void(0)" class="closed"><img src="images/app/fuceng.jpg"></a>
+            </div>
+            
+        </div>
+        <script type="text/javascript">_satellite.pageBottom();</script>
+        <noscript><img src='http://sc.sonystyle.com.cn/b/ss/sonycncom/1/H.10--NS/0?[AQB]&cdp=3&[AQE]' height="1" width="1" border="0" alt="" /></noscript>
+        
+    </body>
 </html>
+
