@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -33,6 +34,7 @@
             
                 </style>
             <script>
+                
                 function shod(){
                     $(".fuceng").show();
                     $(".closed").click(function(){
@@ -122,9 +124,58 @@
                 }
                 
             }
+            function pushBPID(verson){
+                if(parseFloat(verson) < 4.7){
+                    
+                    window.location.href = "http://m.sony.cn";
+                }
+                
+            }
+            function fetchAppVersion() {
+                
+                if (device.android){
+                    jsKitty.getAppVersion();
+                }
+                else if (device.iphone){
+                    connectWebViewJavascriptBridge(function(jsInterface) {
+                                                   jsInterface.init(function(message, responseCallback) {
+                                                                    if (responseCallback) {
+                                                                    responseCallback("Right back atcha");
+                                                                    }
+                                                                    });
+                                                   jsInterface.send("getAppVersion", function(response) {});
+                                                   });
+                                                   
+                }
+                else{
+                    alert("不支持当前浏览器");
+                }
+            }
+            var ua1 = navigator.userAgent;
+            var checker1 = {
+                wechat: ua1.match(/MicroMessenger/i),
+                iphone: ua1.match(/(iPhone|iPod|iPad)/) && !ua.match(/sonyapp/) && !ua.match(/MicroMessenger/i),
+                android: ua1.match(/Android/) && !ua.match(/sonyapp/) && !ua.match(/MicroMessenger/i),
+                androidapp: ua1.match(/Android/) && ua.match(/sonyapp/) && !ua.match(/MicroMessenger/i),
+                iosapp: ua1.match(/(iPhone|iPod|iPad)/) && ua.match(/sonyapp/) && !ua.match(/MicroMessenger/i)
+                
+            };
             
+            if (checker1.iphone){
+                
+            } else if (checker1.android){
+                
+            }  else if (checker1.androidapp){
+                
+            }  else if (checker1.iosapp){
+                fetchAppVersion();
+            }  else if (checker1.wechat){
+                
+            } else{
+                
+            }
             
-            var links = encodeURIComponent("https://www.sonystyle.com.cn/mobile/index.htm?link_type=110&link=285");
+            var links = encodeURIComponent("https://www.sonystyle.com.cn/mobile/index.htm?link_type=1&link=http://m.sony.cn?link_type=110&link=285");
                 </script>
             <script src="//assets.adobedtm.com/1908254899689bc8102616a8c8482c9d87ee3f36/satelliteLib-9ca3d38e3e20baeda239714c8f26fa8cb7a0b3e1.js"></script>
     </head>
@@ -142,6 +193,8 @@
                 </div>
         <div class="m_bg">
             <a href="javascript:parseLink('1',links)"><img src="images/app/img4.jpg"></a>
+            
+            
         </div>
         <div class="m_bg">
             <img src="images/app/img5.jpg">
