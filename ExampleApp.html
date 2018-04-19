@@ -38,33 +38,17 @@
                                    bridge.init(function(message, responseCallback) {})
                                    
                                    //注册响应方法
-                                   bridge.send('getBPID',function(responseCallback)
+                                   bridge.send('setShareURL$https://www.zhihu.com/question/50685306',function(responseCallback)
                                                {
                                                })
-                                   bridge.send('setShareURL$www.baidu.com',function(responseCallback)
+                                   //注册响应方法
+                                   bridge.send('setShareICON$https://pic3.zhimg.com/80/fbc8f3723a4beffba8daa4a6c778c1b1_hd.jpg',function(responseCallback)
                                                {
                                                })
-                                   //oc找到bpid后调用的代码
-                                   bridge.registerHandler('pushBPID', function(data,responseCallback)
-                                                          {
-                                                          alert(data)
-                                                          if(data ==null || data == '')
-                                                          {
-                                                          alert('loadLoginPage')
-                                                          bridge.send('loadLoginPage$', 'please loadLoginPage', function(response) {})
-                                                          }else
-                                                          {
-                                                          alert('getBPType')
-                                                          bridge.send('getBPType', function(responseCallback)
-                                                                      {
-                                                                      })
-                                                          }
-                                                          })
-                                   //oc找到bptype后调用的代码
-                                   bridge.registerHandler('pushBPType', function(data,responseCallback)
-                                                          {
-                                                          alert(data)
-                                                          })
+                                   //注册响应方法
+                                   bridge.send('setShareTITLE$在《黑暗之魂》中传火究竟是一种怎样的体验？',function(responseCallback)
+                                               {
+                                               })
                                    var callbackButton = document.getElementById('buttons').appendChild(document.createElement('button'))
                                    <!--        bridge.callHandler('testObjcCallback', 'testObjcCallback', function(response) {})-->
                                    <!--        bridge.callHandler('getBPID', 'getBPID', function(response) {})-->
