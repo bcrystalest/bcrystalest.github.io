@@ -31,35 +31,73 @@
         if (text.children.length) { text.insertBefore(el, text.children[0]) }
         else { text.appendChild(el) }
     }
+    
     connectWebViewJavascriptBridge(function(bridge)
                                    {
                                    //初始化bridge
                                    bridge.init(function(message, responseCallback) {})
-                                   var ua = navigator.userAgent;
-                                   var checker = {
-                                   iphone: ua.match(/(iPhone|iPod|iPad)/),
-                                   blackberry: ua.match(/BlackBerry/),
-                                   android: ua.match(/Android/)
-                                   };
-                                   if (checker.android){}
-                                   else if (checker.iphone){
+                                   
+                                   //注册响应方法
                                    bridge.send('setShareURL$https://www.zhihu.com/question/50685306',function(responseCallback)
                                                {
                                                })
+                                   //注册响应方法
                                    bridge.send('setShareICON$https://pic3.zhimg.com/80/fbc8f3723a4beffba8daa4a6c778c1b1_hd.jpg',function(responseCallback)
                                                {
                                                })
+                                   //注册响应方法
                                    bridge.send('setShareTITLE$在《黑暗之魂》中传火究竟是一种怎样的体验？',function(responseCallback)
                                                {
                                                })
+                                   var callbackButton = document.getElementById('buttons').appendChild(document.createElement('button'))
+                                   <!--        bridge.callHandler('testObjcCallback', 'testObjcCallback', function(response) {})-->
+                                   <!--        bridge.callHandler('getBPID', 'getBPID', function(response) {})-->
+                                   callbackButton.innerHTML = '调用IOS的方法'
+                                   callbackButton.onclick = function(KittyLoad) {
+                                   KittyLoad.preventDefault()
+                                   //给IOS发 送消息
+                                   //iOSLandingURL = "Kitty$" + LandingURL;
+                                   <!--                                   bridge.send('KittyLoad$http://www.sonystyle.com.cn/mobile_app/bravia_40/x8500d.4.json', function(response) {})-->
                                    }
-                                   else{
-                                   alert("不支持当前浏览器");
+                                   var callbackButton2 = document.getElementById('buttons').appendChild(document.createElement('button'))
+                                   callbackButton2.innerHTML = '调用IOS的方法'
+                                   callbackButton2.onclick = function(f) {
+                                   f.preventDefault()
+                                   //给IOS发送消息
+                                   //iOSLandingURL = "Kitty$" + LandingURL;
+                                   bridge.send('parseLink$6$23333', function(response) {})
                                    }
-                                   }
+                                   })
                                    
-                                   
-                                   </script>
+                                   function KittyLoad(LandingURL)
+                                   {
+                                       var ua = navigator.userAgent;
+                                       var checker = {
+                                           iphone: ua.match(/(iPhone|iPod|iPad)/),
+                                           blackberry: ua.match(/BlackBerry/),
+                                           android: ua.match(/Android/)
+                                       };
+                                       if (checker.android){
+                                           jsKitty.openproductpage(LandingURL);
+                                       }
+                                       else if (checker.iphone){
+                                           
+                                           var iOSLandingURL = "Kitty$" + LandingURL;
+                                           connectWebViewJavascriptBridge(function(jsInterface) {
+                                                                          jsInterface.init(function(message, responseCallback) {
+                                                                                           if (responseCallback) {
+                                                                                           responseCallback("Right back atcha")
+                                                                                           }
+                                                                                           })
+                                                                          jsInterface.send(iOSLandingURL, function(responseData){   })
+                                                                          })
+                                       }
+                                       else{
+                                           alert("不支持当前浏览器");
+                                       }
+                                   }
+    
+    
+        </script>
     <div id='buttons'></div> <div id='text'></div>
 </body></html>
-
