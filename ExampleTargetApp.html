@@ -1,0 +1,36 @@
+<html>
+     <head>
+             <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+             <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+             <script type="text/javascript">
+             function sleep(numberMillis) {
+                 var now = new Date();
+                 var exitTime = now.getTime() + numberMillis;
+                 while (true) {
+                     now = new Date();
+                     if (now.getTime() > exitTime)
+                     return;
+                 }
+             }
+                 
+             var ua = navigator.userAgent;
+             var checker = {
+                     iphone: ua.match(/(iPhone|iPod|iPad)/),
+                     blackberry: ua.match(/BlackBerry/),
+                     android: ua.match(/Android/)
+                 };
+             alert("此设备是："+checker.iphone);
+             if (checker.android){
+                     android.jump();
+                 }else{
+                         jump();
+                     }
+             </script>
+         </head>
+     <body>
+         <div align="center">
+             <a class="button green" style="height:20px;width:60px;" href=" " onclick="javascript:jump();">取消</a >
+         </div>
+         </body>
+</html>
+
