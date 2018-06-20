@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test</title>
+</head>
+<body>
+    <button onclick="handleClick()">打印存储的token值</button>
+    <div id="local"></div>
+</body>
+<script>
+    function connectWebViewJavascriptBridge(callback) {
+        if (window.WebViewJavascriptBridge) {
+            callback(WebViewJavascriptBridge)
+        } else {
+            document.addEventListener('WebViewJavascriptBridgeReady', function() {
+                callback(WebViewJavascriptBridge)
+            }, false)
+        }
+    }
+    connectWebViewJavascriptBridge(function(bridge)
+    {
+        //初始化bridge
+        bridge.init(function(message, responseCallback) {})
+    }) 
+    window.localStorage.setItem('token','token值,我存储在本地')
+    function handleClick(){
+        console.log('点击事件')
+        document.getElementById("local").innerHTML=window.localStorage.getItem('token');
+    }
+</script>
+</html>
