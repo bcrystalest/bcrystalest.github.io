@@ -88,7 +88,9 @@ function connectWebViewJavascriptBridge(callback) {
         }, false)
     }
 }
+alert("ready");
 if (deviceChecker.isAndroid()) {
+    alert("android");
     window.SysClientJs.getTitle('{"getTitle":"仪器注册记录","isback":"true"}');
     window.SysClientJs.getUFORegisiter('getJson');
 } else if (deviceChecker.isApple()) {
@@ -114,6 +116,7 @@ if (deviceChecker.isAndroid()) {
         sendRequest(dt);
     }
 }else{
+
     alert("not apple or andriod");
 }
 
