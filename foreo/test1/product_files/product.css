@@ -1,0 +1,102 @@
+@media screen and (max-width:767px){
+*{
+    margin: 0;
+    padding: 0;
+}
+.clearfix{clear:both}
+/* #ufobox{
+    margin-top:0%;
+    background: url('../img/1.png');
+    padding: 3%;
+  } */
+  ul li{
+      float: left;
+      list-style: none;
+      margin-right:1.0rem;
+      font-family: 'PingFangSC-Regular', sans-serif;
+      color:#FFFFFF;
+      font-weight:200;
+      font-size:1.3rem;
+      /* letter-spacing: 1px;  */
+  }
+  ul{
+      padding: 0;
+      margin-top:8.6rem;
+      margin-left:1rem;
+  }
+  /* p{
+    margin-left:1rem;
+  } */
+  /* p>span{
+      font-size:1.2rem;
+      letter-spacing: 0.06rem;
+  } */
+/* #ufop{
+    font-family: 'PingFangSC-Regular', sans-serif;
+    color:#0491A6;
+    letter-spacing: 0px;
+    font-weight:normal;
+    font-size:1.8rem;
+}
+#minip{
+    font-family: 'PingFangSC-Regular', sans-serif;
+    color:#F1416F;
+    letter-spacing: 0px;
+    font-weight:normal;
+    font-size:1.8rem;
+}
+#fofop{
+    font-family: 'PingFangSC-Regular', sans-serif;
+    color:#007AD9;
+    letter-spacing: 0px;
+    font-weight:normal;
+    font-size:1.8rem;
+} */
+/* #minibox{
+    background: url('../img/2 .png');
+    padding: 3%;
+  } */
+html
+{
+    font-size: 62.5%;
+}
+img{
+    float: right;width: 30%;
+}
+#fofobox{
+    background: url('../img/3.png');
+    padding: 3%;
+  }
+  #next{
+    /* margin-top: 2rem; */
+    bottom: 1.2rem;
+    display: block;
+    text-align: center;
+    width: 90%;
+    border: 1px solid;
+    color: white;
+    text-decoration: none;
+    font-weight: small;
+    font-size: 1.2rem;
+    background: #e21483;
+    border-radius: 5px;
+    /* margin: 10rem; */
+    line-height: 50px;
+    font-family: 'PingFangSC-Regular', sans-serif;
+    font-size: 2rem;
+    left: 5%;
+    margin: 1rem auto;
+    margin-top: 0;
+}
+#notice{
+    color: #999999;
+    font-family: 'PingFangSC-Regular', sans-serif;
+    font-weight: normal;
+    font-size: 0.7rem;
+    letter-spacing: 1.0px;
+    width: 90%;
+    margin-left: 5%;
+    padding-bottom: 2rem;
+    text-align: center;
+} 
+}
