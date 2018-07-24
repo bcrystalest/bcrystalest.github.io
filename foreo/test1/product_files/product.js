@@ -1,3 +1,4 @@
+alert("ready");
 // 与苹果连接
 var name=document.getElementById('name');
 //发送请求
@@ -88,7 +89,7 @@ function connectWebViewJavascriptBridge(callback) {
         }, false)
     }
 }
-alert("ready");
+
 if (deviceChecker.isAndroid()) {
     alert("android");
     window.SysClientJs.getTitle('{"getTitle":"仪器注册记录","isback":"true"}');
