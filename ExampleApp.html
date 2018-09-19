@@ -35,7 +35,9 @@
     connectWebViewJavascriptBridge(function(bridge)
                                    {
                                    //初始化bridge
-                                   bridge.init(function(message, responseCallback) {})
+                                   bridge.init(function(message, responseCallback) {
+                                               alert(responseCallback);
+                                               })
                                    
                                    //注册响应方法
                                    bridge.send('setShareURL$https://www.zhihu.com/question/50685306',function(responseCallback)
