@@ -12,7 +12,6 @@
         </style>
         
         <script>
-            $(".btn").trigger("btnClick2");
         
             //OC调用JS的方法列表
             function alertMobile() {
@@ -41,7 +40,7 @@
             function btnClick3() {
                 window.webkit.messageHandlers.showSendMsg.postMessage(['两个参数One', '两个参数Two'])
             }
-
+        $(".btn").trigger("btnClick2");
         </script>
         
         
