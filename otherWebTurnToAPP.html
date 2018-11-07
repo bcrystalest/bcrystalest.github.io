@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>app</title>
+</head>
+<body>
+    <a href="javascript:;" id="openApp">打开app</a>
+</body>
+<script>
+    document.getElementById('openApp').onclick = function(e){
+        var start = new Date();
+        var t = 500;
+        window.location.href = "sonychina://123";
+        setTimeout(function() {
+          var end = new Date();
+          console.log(end - start);
+          if (end - start <= (t + 30)) {
+            window.location.reload();
+            window.location.href = "https://a.app.qq.com/o/simple.jsp?pkgname=com.sony.store.china"
+          }
+        }, t);
+    }
+</script>
+</html>
