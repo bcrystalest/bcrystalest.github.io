@@ -26,8 +26,8 @@
         "hide_flag": "N",
         "icon_path": "",
         "ip_flag": "Y",
-        "special_campaign": "Y",
-        "program_id": "1",
+        "special_campaign": "N",
+        "program_id": "3",
         "start_date": "2014-12-29 00:00:00"
     },
     {"campaign_control":"","campaign_desc":"FZ","campaign_id":276,"campaign_title":"DICC签到","cover_image_path":"http://","ecoupon":"","ecoupon_flag":"N","end_date":"2020-01-15 00:00:00","hide_flag":"N","icon_path":"http://","ip_flag":"N","program_id": "8","special_campaign":"N","start_date":"2018-01-15 00:00:00"},
