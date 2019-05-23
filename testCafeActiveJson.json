@@ -1,27 +1,95 @@
 {
-	"code": "00",
-	"program_id": "0",
-	"program_name": "",
-	"program_desc": "",
-	"icon_image_path": "",
-	"cover_image_path": "",
-	"default_icon_image": "",
-	"campaignInfoList": [{
-		"campaign_control": "",
-		"campaign_desc": "慢速视频",
-		"campaign_id": 30,
-		"campaign_title": "慢速视频",
-		"cover_image_path": "http:",
-		"ecoupon": "",
-		"ecoupon_flag": "N",
-		"end_date": "2025-08-13 00:00:00",
-		"hide_flag": "Y",
-		"icon_path": "http:",
-		"ip_flag": "N",
-		"program_id": "4",
-		"special_campaign": "N",
-		"start_date": "2015-08-13 00:00:00"
-    },{
+    "campaignInfoList": [{
+        "campaign_control": "",
+        "campaign_desc": "2015年5月主题活动",
+        "campaign_id": 19,
+        "campaign_title": "世界那么大",
+        "cover_image_path": "https://www.sonystyle.com.cn/mysony/acafe/campaign/2015/19/images/icon.jpg",
+        "ecoupon": "",
+        "ecoupon_flag": "N",
+        "end_date": "2015-05-30 00:00:00",
+        "hide_flag": "N",
+        "icon_path": "https://www.sonystyle.com.cn/mysony/acafe/campaign/2015/19/images/icon.jpg",
+        "ip_flag": "Y",
+        "special_campaign": "N",
+        "program_id": "1",
+        "start_date": "2015-05-08 00:00:00"
+    }, {
+        {
+            "campaignInfoList": [{
+                "campaign_control": "",
+                "campaign_desc": "2015年5月主题活动",
+                "campaign_id": 19,
+                "campaign_title": "世界那么大",
+                "cover_image_path": "https://www.sonystyle.com.cn/mysony/acafe/campaign/2015/19/images/icon.jpg",
+                "ecoupon": "",
+                "ecoupon_flag": "N",
+                "end_date": "2025-05-30 00:00:00",
+                "hide_flag": "N",
+                "icon_path": "https://www.sonystyle.com.cn/mysony/acafe/campaign/2015/19/images/icon.jpg",
+                "ip_flag": "Y",
+                "special_campaign": "N",
+                "program_id": "1",
+                "start_date": "2015-05-08 00:00:00"
+            }, {
+                "campaign_control": "",
+                "campaign_desc": "Alpha Cafe Program",
+                "campaign_id": 16,
+                "campaign_title": "Alpha Cafe",
+                "cover_image_path": "",
+                "ecoupon": "",
+                "ecoupon_flag": "N",
+                "end_date": "2024-12-31 00:00:00",
+                "hide_flag": "N",
+                "icon_path": "",
+                "ip_flag": "Y",
+                "program_id": "1",
+                "special_campaign": "Y",
+                "start_date": "2014-12-29 00:00:00"
+                
+            },
+            {
+                "campaign_control": "",
+                "campaign_desc": "FZ",
+                "campaign_id": 276,
+                "campaign_title": "DICC签到",
+                "cover_image_path": "http://",
+                "ecoupon": "",
+                "ecoupon_flag": "N",
+                "end_date": "2020-01-15 00:00:00",
+                "hide_flag": "N",
+                "icon_path": "http://",
+                "ip_flag": "N",
+                "program_id": "8",
+                "special_campaign": "N",
+                "start_date": "2018-01-15 00:00:00"
+            },
+            {
+                "campaign_control": "",
+                "campaign_desc": "青年摄影师发展计划",
+                "campaign_id": 707,
+                "campaign_title": "young2019Htest",
+                "cover_image_path": "http://",
+                "ecoupon": "",
+                "ecoupon_flag": "N",
+                "end_date": "2020-06-30 00:00:00",
+                "hide_flag": "N",
+                "icon_path": "http://",
+                "ip_flag": "Y",
+                "program_id": "7",
+                "special_campaign": "Y",
+                "start_date": "2019-04-15 00:00:00"
+            }
+            ],
+            "code": "00",
+            "cover_image_path": "https://www.sonystyle.com.cn/images/acafe_470x404_150107.jpg",
+            "default_icon_image": "https://www.sonystyle.com.cn/mysony/acafe/myspace/images/space/default.gif",
+            "icon_image_path": "https://www.sonystyle.com.cn/mysony/acafe/images/img1.jpg",
+            "program_desc": "alpha cafe program",
+            "program_id": "1",
+            "program_name": "alpha cafe"
+        }
+        
         "campaign_control": "",
         "campaign_desc": "Alpha Cafe Program",
         "campaign_id": 16,
@@ -33,23 +101,17 @@
         "hide_flag": "N",
         "icon_path": "",
         "ip_flag": "Y",
-        "program_id": "1",
         "special_campaign": "Y",
+        "program_id": "1",
         "start_date": "2014-12-29 00:00:00"
-    },{
-        "campaign_control": "",
-        "campaign_desc": "创意大赛-第三阶段",
-        "campaign_id": 11,
-        "campaign_title": "创意大赛-第三阶段",
-        "cover_image_path": "",
-        "ecoupon": "",
-        "ecoupon_flag": "N",
-        "end_date": "2024-12-31 00:00:00",
-        "hide_flag": "N",
-        "icon_path": "",
-        "ip_flag": "Y",
-        "program_id": "2",
-        "special_campaign": "N",
-        "start_date": "2014-10-23 00:00:00"
-    }]
+    }],
+    "code": "00",
+    "cover_image_path": "https://www.sonystyle.com.cn/images/acafe_470x404_150107.jpg",
+    "default_icon_image": "https://www.sonystyle.com.cn/mysony/acafe/myspace/images/space/default.gif",
+    "icon_image_path": "https://www.sonystyle.com.cn/mysony/acafe/images/img1.jpg",
+    "program_desc": "alpha cafe program",
+    "program_id": "1",
+    "program_name": "alpha cafe"
 }
+
+
