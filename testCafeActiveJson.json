@@ -46,6 +46,21 @@
         "program_id": "7",
         "special_campaign": "Y",
         "start_date": "2019-04-15 00:00:00"
+    },{
+        "campaign_control": "",
+        "campaign_desc": "潜水摄影大赛",
+        "campaign_id": 703,
+        "campaign_title": "潜水摄影大赛广角组",
+        "cover_image_path": "https://www.sonystyle.com.cn/smallapp/acafe/campaign/2019/703/images/cover_703.jpg",
+        "ecoupon": "",
+        "ecoupon_flag": "N",
+        "end_date": "2019-07-20 00:00:00",
+        "hide_flag": "N",
+        "icon_path": "https://www.sonystyle.com.cn/smallapp/acafe/campaign/2019/703/images/icon_703.jpg",
+        "ip_flag": "Y",
+        "special_campaign": "N",
+        "program_id": "1",
+        "start_date": "2019-04-12 00:00:00"
     }
     ],
     "code": "00",
