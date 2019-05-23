@@ -36,5 +36,20 @@
         "program_id": "1",
         "special_campaign": "Y",
         "start_date": "2014-12-29 00:00:00"
+    },{
+        "campaign_control": "",
+        "campaign_desc": "创意大赛-第三阶段",
+        "campaign_id": 11,
+        "campaign_title": "创意大赛-第三阶段",
+        "cover_image_path": "",
+        "ecoupon": "",
+        "ecoupon_flag": "N",
+        "end_date": "2024-12-31 00:00:00",
+        "hide_flag": "N",
+        "icon_path": "",
+        "ip_flag": "Y",
+        "program_id": "2",
+        "special_campaign": "N",
+        "start_date": "2014-10-23 00:00:00"
     }]
 }
