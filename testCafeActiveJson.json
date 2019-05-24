@@ -61,6 +61,21 @@
         "special_campaign": "N",
         "program_id": "1",
         "start_date": "2019-04-12 00:00:00"
+    },{
+        "campaign_control":"",
+        "campaign_desc":"慢速视频",
+        "campaign_id":30,
+        "campaign_title":"慢速视频",
+        "cover_image_path":"http:",
+        "ecoupon":"",
+        "ecoupon_flag":"N",
+        "end_date":"2025-08-13 00:00:00",
+        "hide_flag":"Y",
+        "icon_path":"http:",
+        "ip_flag":"N",
+        "program_id":"4",
+        "special_campaign":"N",
+        "start_date":"2015-08-13 00:00:00"
     }
     ],
     "code": "00",
