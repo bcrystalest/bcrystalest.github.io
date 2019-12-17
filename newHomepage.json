@@ -1596,19 +1596,19 @@
         ]
     },
     "community": {
-        "title": "My Sony社区",
-        "titlecolor": "#ffffff",
-        "bgcolor": "#040b1e",
-        "itemcolor": "#370d19",
-        "itemtitlecolor": "#ffffff",
-        "bottomcolor": "#fff8fb",
+        "title": "My Sony 社区",
+        "titlecolor": "",
+        "bgcolor": "",
+        "itemcolor": "",
+        "itemtitlecolor": "",
+        "bottomcolor": "",
         "refresh": "/content/dam/sonystyle/mobile/nav/2.png",
         "all": "/content/dam/sonystyle/mobile/nav/1.png"
     },
     "bottomNav": {
         "bgcolor": "",
         "bgimageUrl": "/content/dam/sonystyle/mobile/nav/bg/594789895.jpg",
-        "enable": "true",
+        "enable": "",
         "items": [{
                 "image": "/content/dam/sonystyle/mobile/nav/mysony/icon1_191125.png",
                 "imagehover": "/content/dam/sonystyle/mobile/nav/mysony/icon1_1_191125.png",
@@ -1745,5 +1745,4 @@
         }
     ]
 }
-
 
