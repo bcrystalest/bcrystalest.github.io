@@ -102,9 +102,10 @@ class WebViewExampleState extends State<WebViewExample> {
         _webViewController = controller;
       },
       javascriptMode: JavascriptMode.unrestricted,
+      initialUrl: 'https://cofdev.csmc-cloud.com/marchevapp/727evapp.html',
       // initialUrl: 'https://wwwdev.fafc.cnps.dealerconnection.com.cn/cashier/v1/demoPc/home.html',
       // initialUrl: 'https://dsl.apps.pp01.cneast.cf.ford.com.cn/content/cx727/cn/zh_cn/model-select.html#model?t=91222211',
-      initialUrl: 'https://bcrystalest.github.io/flutterNative.html?t=222223111',
+      // initialUrl: 'https://bcrystalest.github.io/flutterNative.html?t=222223111',
       gestureNavigationEnabled: true,
       userAgent: "channel/app",
       javascriptChannels: {
