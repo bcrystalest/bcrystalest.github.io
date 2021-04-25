@@ -21,7 +21,7 @@ class HomePageApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("商品列表"),
+        title: Text("webview_flutter"),
           actions: <Widget>[
             IconButton(
                 icon: Icon(Icons.search),
@@ -30,6 +30,14 @@ class HomePageApp extends StatelessWidget {
                   print("搜索");
                   _webViewController.evaluateJavascript("flutterCallJsMethod('Flutter通过JS修改')");
                 },
+            ),
+            IconButton(
+              icon: Icon(Icons.search),
+              tooltip: "搜索",
+              onPressed: () {
+                print("搜索");
+                _webViewController.evaluateJavascript("flutterCallJsMethod('Flutter通过JS修改')");
+              },
             ),
           ]
       ),
@@ -104,11 +112,12 @@ class WebViewExampleState extends State<WebViewExample> {
         _webViewController = controller;
       },
       javascriptMode: JavascriptMode.unrestricted,
+
       // initialUrl: 'https://cofdev.csmc-cloud.com/marchevapp/727evapp.html',
-      // initialUrl: 'https://akamai.wwwqa.brandap.ford.com/content/cx727/cn/zh_cn/user.html?t=321',
+      initialUrl: 'https://akamai.wwwqa.brandap.ford.com/content/cx727/cn/zh_cn/user.html',
       // initialUrl: 'https://wwwdev.fafc.cnps.dealerconnection.com.cn/cashier/v1/demoPc/home.html',
       // initialUrl: 'https://dsl.apps.pp01.cneast.cf.ford.com.cn/content/cx727/cn/zh_cn/model-select.html#model?t=91222211',
-      initialUrl: 'https://bcrystalest.github.io/flutterNative.html?t=222223111',
+      // initialUrl: 'https://bcrystalest.github.io/flutterNative.html?t=222223111',
       gestureNavigationEnabled: true,
       userAgent: "channel/app",
       javascriptChannels: {
